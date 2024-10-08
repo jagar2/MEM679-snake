@@ -2,6 +2,7 @@ import pygame
 from game import Game
 from config import SCREEN_WIDTH, SCREEN_HEIGHT
 
+
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -11,6 +12,7 @@ def main():
     game.run()
 
     pygame.quit()
+
 
 if __name__ == "__main__":
     main()
