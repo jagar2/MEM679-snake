@@ -3,9 +3,18 @@ from mem679_snake.snake import Snake
 from mem679_snake.food import Food
 from mem679_snake.config import SCREEN_WIDTH, SCREEN_HEIGHT, WHITE, BLACK, FPS
 
-
 class Game:
+    """
+    Class to represent the Snake game.
+    """
+
     def __init__(self, screen):
+        """
+        Initialize the game.
+
+        Args:
+            screen (pygame.Surface): The screen surface where the game will be drawn.
+        """
         self.screen = screen
         self.clock = pygame.time.Clock()
         self.snake = Snake()
@@ -14,6 +23,9 @@ class Game:
         self.running = True
 
     def handle_events(self):
+        """
+        Handle user input events.
+        """
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
@@ -28,26 +40,37 @@ class Game:
                     self.snake.change_direction("RIGHT")
 
     def update(self):
+        """
+        Update the game state.
+        """
         self.snake.move()
 
+        # Check for collisions with walls or self
         if (
             self.snake.check_collision_with_walls()
             or self.snake.check_collision_with_self()
         ):
             self.running = False
 
+        # Check for collision with food
         if self.snake.get_head_rect().colliderect(self.food.get_rect()):
             self.snake.grow()
             self.score += 1
             self.food.respawn()
 
     def draw(self):
+        """
+        Draw the game elements on the screen.
+        """
         self.screen.fill(BLACK)
         self.snake.draw(self.screen)
         self.food.draw(self.screen)
         pygame.display.flip()
 
     def run(self):
+        """
+        Run the main game loop.
+        """
         while self.running:
             self.handle_events()
             self.update()
