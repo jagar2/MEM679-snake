@@ -31,7 +31,7 @@ jobs:
           pip install tox
 
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@v1.37.0
+        uses: anothrNick/github-tag-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Access GitHub Token secret here
 
