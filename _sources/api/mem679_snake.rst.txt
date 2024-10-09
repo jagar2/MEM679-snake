@@ -1,0 +1,53 @@
+mem679\_snake package
+=====================
+
+Submodules
+----------
+
+mem679\_snake.config module
+---------------------------
+
+.. automodule:: mem679_snake.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mem679\_snake.food module
+-------------------------
+
+.. automodule:: mem679_snake.food
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mem679\_snake.game module
+-------------------------
+
+.. automodule:: mem679_snake.game
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mem679\_snake.main module
+-------------------------
+
+.. automodule:: mem679_snake.main
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+mem679\_snake.snake module
+--------------------------
+
+.. automodule:: mem679_snake.snake
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: mem679_snake
+   :members:
+   :undoc-members:
+   :show-inheritance:
