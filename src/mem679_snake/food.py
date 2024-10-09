@@ -1,6 +1,6 @@
 import random
 import pygame
-from config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, RED
+from mem679_snake.config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, RED
 
 
 class Food:

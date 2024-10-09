@@ -1,7 +1,7 @@
 import pygame
-from snake import Snake
-from food import Food
-from config import SCREEN_WIDTH, SCREEN_HEIGHT, WHITE, BLACK, FPS
+from mem679_snake.snake import Snake
+from mem679_snake.food import Food
+from mem679_snake.config import SCREEN_WIDTH, SCREEN_HEIGHT, WHITE, BLACK, FPS
 
 
 class Game:

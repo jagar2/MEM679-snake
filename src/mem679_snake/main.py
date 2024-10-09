@@ -1,6 +1,6 @@
 import pygame
-from game import Game
-from config import SCREEN_WIDTH, SCREEN_HEIGHT
+from mem679_snake.game import Game
+from mem679_snake.config import SCREEN_WIDTH, SCREEN_HEIGHT
 
 
 def main():
