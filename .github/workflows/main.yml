@@ -12,12 +12,12 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     permissions:
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -31,18 +31,14 @@ jobs:
           pip install tox
 
       - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@v1
+        uses: anothrNick/github-tag-action@v1.37.0  # specify the latest version
         if: |
           contains(github.event.head_commit.message, '#minor') ||
           contains(github.event.head_commit.message, '#patch') ||
           contains(github.event.head_commit.message, '#major')
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          release_branches: main
-          DEFAULT_BUMP: patch
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Build the package
         run: |
           tox
@@ -64,5 +60,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/_build/html
