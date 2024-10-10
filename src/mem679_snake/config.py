@@ -9,11 +9,12 @@ Attributes:
 
     WHITE (tuple): RGB color code for white.
     BLACK (tuple): RGB color code for black.
-    GREEN (tuple): RGB color code for green.
+    YELLOW (tuple): RGB color code for YELLOW.
     RED (tuple): RGB color code for red.
 
     FPS (int): Frames per second, controlling the game speed.
 """
+
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
 BLOCK_SIZE = 20
