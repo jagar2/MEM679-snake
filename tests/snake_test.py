@@ -1,7 +1,7 @@
 import pytest
 from unittest import mock
 from mem679_snake.snake import Snake
-from mem679_snake.config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, GREEN
+from mem679_snake.config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, YELLOW
 import pygame
 
 @pytest.fixture
@@ -83,6 +83,6 @@ def test_draw(mock_draw_rect, snake):
     for segment in snake.body:
         mock_draw_rect.assert_any_call(
             mock_screen,
-            GREEN,
+            YELLOW,
             pygame.Rect(segment[0], segment[1], BLOCK_SIZE, BLOCK_SIZE),
         )

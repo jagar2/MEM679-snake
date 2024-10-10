@@ -1,5 +1,6 @@
 import pygame
-from mem679_snake.config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, GREEN
+from mem679_snake.config import BLOCK_SIZE, SCREEN_WIDTH, SCREEN_HEIGHT, YELLOW
+
 
 class Snake:
     """
@@ -10,7 +11,7 @@ class Snake:
         direction (str): The current direction the snake is moving.
         new_block (bool): Flag to indicate if a new block needs to be added to the snake.
     """
-    
+
     def __init__(self):
         """
         Initializes the Snake with a default position and direction.
@@ -22,7 +23,7 @@ class Snake:
     def get_head_position(self):
         """
         Returns the position of the snake's head.
-        
+
         Returns:
             tuple: The (x, y) coordinates of the head segment.
         """
@@ -30,9 +31,9 @@ class Snake:
 
     def get_head_rect(self):
         """
-        Returns a Pygame Rect object representing the snake's head, 
+        Returns a Pygame Rect object representing the snake's head,
         used for collision detection.
-        
+
         Returns:
             pygame.Rect: Rectangle for the snake's head segment.
         """
@@ -41,9 +42,9 @@ class Snake:
 
     def change_direction(self, new_direction):
         """
-        Changes the direction of the snake if the new direction is 
+        Changes the direction of the snake if the new direction is
         not directly opposite to the current one.
-        
+
         Args:
             new_direction (str): The new direction for the snake ("UP", "DOWN", "LEFT", "RIGHT").
         """
@@ -58,7 +59,7 @@ class Snake:
 
     def move(self):
         """
-        Moves the snake by adding a new head position in the current direction and 
+        Moves the snake by adding a new head position in the current direction and
         removing the tail segment unless the snake has just eaten.
         """
         x, y = self.get_head_position()
@@ -83,7 +84,7 @@ class Snake:
 
     def grow(self):
         """
-        Sets the flag to grow the snake by adding a new block 
+        Sets the flag to grow the snake by adding a new block
         after the next move.
         """
         self.new_block = True
@@ -117,6 +118,6 @@ class Snake:
         for segment in self.body:
             pygame.draw.rect(
                 screen,
-                GREEN,
+                YELLOW,
                 pygame.Rect(segment[0], segment[1], BLOCK_SIZE, BLOCK_SIZE),
             )
